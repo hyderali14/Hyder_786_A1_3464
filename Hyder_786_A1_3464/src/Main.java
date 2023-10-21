@@ -20,3 +20,26 @@ class Triangle{
     }
 }
 
+    double distance(Point a, Point b) {
+        return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
+    }
+
+    double perimeter() {
+        return distance(p1, p2) + distance(p2, p3) + distance(p3, p1);
+    }
+
+    String type() {
+        double a = distance(p1, p2);
+        double b = distance(p2, p3);
+        double c = distance(p3, p1);
+
+        if (a == b && b == c)
+            return "Equilateral";
+        else if (a == b || b == c || c == a)
+            return "Isosceles";
+        else
+            return "Unknown";
+    }
+}
+
+
